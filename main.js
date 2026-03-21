@@ -23,14 +23,13 @@ try {
   process.exit(1);
 }
 
-// Start loading embedding model in background (non-blocking)
+// Check embedding server in background (non-blocking)
 import('./lib/embeddings.js').then(async (mod) => {
   try {
-    // Trigger model download/load by embedding a test string
-    await mod.embed('test');
-    console.error('[knowledge-graph] Embedding model ready');
+    await mod.checkServer();
+    console.error(`[knowledge-graph] Embedding server ready (dim=${mod.getDimension()})`);
   } catch (e) {
-    console.error('[knowledge-graph] Embedding model failed to load:', e.message);
+    console.error('[knowledge-graph] Embedding server not available:', e.message);
     console.error('[knowledge-graph] Falling back to FTS5 + graph search only');
   }
 });

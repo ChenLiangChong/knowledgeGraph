@@ -3,3 +3,4 @@ knowledge.db
 knowledge.db-shm
 knowledge.db-wal
 *.local.js
+models/
