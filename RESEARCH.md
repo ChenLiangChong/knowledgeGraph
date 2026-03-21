@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This document proposes a multi-layer Knowledge Graph (KG) architecture designed to systematically improve LLM output quality in specialized domains. Inspired by the autoresearch loop (Karpathy, 2026) and cognitive apprenticeship models, the system uses structured knowledge graphs to capture error patterns, encode domain reasoning workflows, and enable personalized expert workflows — ultimately replacing brute-force RAG with graph-traversal-based knowledge retrieval.
+This document proposes a multi-layer Knowledge Graph (KG) architecture designed to systematically improve LLM output quality in specialized domains. Inspired by the autoresearch loop (Karpathy, 2026) and cognitive apprenticeship models, the system uses structured knowledge graphs to capture error patterns, encode domain reasoning workflows, and enable personalized expert workflows — ultimately enhancing RAG with graph-structured retrieval for more precise and authoritative results.
 
 ## Motivation
 
@@ -76,9 +76,9 @@ What flows back to Layer 2:
 What stays in Layer 3:
 - Personal communication style, client-specific strategies, pricing preferences
 
-### Layer 4: Citation Graph (Replacing RAG)
+### Layer 4: Citation Graph (Enhancing RAG)
 
-**Purpose**: Replace vector-similarity-based RAG with graph-traversal-based retrieval.
+**Purpose**: Enhance vector-similarity-based RAG with graph-structured retrieval.
 
 In domains with explicit citation structures (academic papers, technical standards, regulatory documents), the citation graph provides a natural retrieval mechanism:
 
@@ -93,7 +93,7 @@ Key edge semantics:
 - `contradicts`: Later document overruled earlier document
 - `implies`: High citation count implies authoritative source
 
-**Advantage over RAG**: Citation graphs encode **structural authority** (which documents are most relied upon) rather than **semantic similarity** (which chunks look similar to the query). This produces more precise and authoritative retrieval.
+**Advantage over vanilla RAG**: Citation graphs additionally encode **structural authority** (which documents are most relied upon) rather than **semantic similarity** (which chunks look similar to the query). This produces more precise and authoritative retrieval.
 
 ## Unified Schema Design
 
