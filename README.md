@@ -1,3 +1,5 @@
+
+
 # Knowledge Graph MCP Server
 
 [繁體中文](README.zh-TW.md) | English
@@ -47,7 +49,7 @@ Add hooks to `~/.claude/settings.json` (see [Hooks section](#hooks-automation) f
 ### Import Existing Knowledge (Optional)
 
 ```bash
-node scripts/import-skills.js       # Import markdown files as KG nodes
+node scripts/import-skills.js <skills-directory>  # Import markdown files as KG nodes
 node scripts/backfill-embeddings.js  # Add vector indexes + structural edges
 node scripts/backfill-decay.js       # Add stability + memory_level + category
 ```
